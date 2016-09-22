@@ -6,9 +6,9 @@ For a concise introduction to Ansible, [read this page](https://github.com/afroi
 
 ## Set Up ##
 
-To set up Ansible on an OS X workstation:
+To set up Ansible on a MacOS workstation:
 
-    make controller
+    make macos-controller
     cp ./ansible.cfg.example ./ansible.cfg
 
 ## Usage ##
@@ -73,7 +73,7 @@ For convenience, the Ansible playbooks are in the root of this project.
 
 ## Passwords ##
 
-You must specify the SHA512 hashed version of a user password when you set it through Ansible. By default, Mac OS X does not generate the same hashes as Linux, so use this command to generate a valid hash:
+You must specify the SHA512 hashed version of a user password when you set it through Ansible. By default, MacOS does not generate the same hashes as Linux, so use this command to generate a valid hash:
 
     make password
 
@@ -91,7 +91,7 @@ Alternatively, install the *python-minimal* package:
 
     apt update && apt install python-minimal
 
-Regardless of how you install Python2, you also need to add an *ansible_python_interpreter* setting to the entries for these systems in your inventory:
+Regardless of how you install Python 2, you also need to add an *ansible_python_interpreter* setting to the entries for these systems in your inventory:
 
     ansible_python_interpreter=/usr/bin/python2.7
 
@@ -101,3 +101,4 @@ Regardless of how you install Python2, you also need to add an *ansible_python_i
 Email:
 
 <stuart@stuartellis.eu>
+
