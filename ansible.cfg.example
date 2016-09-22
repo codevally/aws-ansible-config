@@ -1,0 +1,9 @@
+[defaults]
+
+# SSH settings
+remote_user = ubuntu
+remote_port = 22
+pipelining  = False
+
+# Inventory defaults to AWS dynamic inventory script
+inventory = inventory/ec2.py

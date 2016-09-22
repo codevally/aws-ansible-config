@@ -1,0 +1,9 @@
+---
+  - name: ensure S3 bucket
+    s3_bucket:
+      name: "{{ proj_name }}-{{ app_name }}-{{ env_name }}"
+      region: "{{ aws_region }}"
+      tags:
+        Application: "{{ app_name }}"
+        Environment: "{{ env_name }}"
+        Project: "{{ proj_name }}"
