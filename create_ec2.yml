@@ -5,9 +5,13 @@
     gather_facts: False
     vars:
       instance_type: t2.micro
-      image: ami-47a23a30
-      region: eu-west-1
     vars_prompt:
+      - name: "image"
+        prompt: "ID of Amazon Machine Image, e.g. ami-47a23a30"
+        private: no
+      - name: "region"
+        prompt: "Name of the AWS region, e.g. eu-west-1"
+        private: no
       - name: "security_group_name"
         prompt: "Name of EC2 security group"
         private: no
