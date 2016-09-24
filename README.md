@@ -6,7 +6,7 @@ For a concise introduction to Ansible, [read this page](https://github.com/afroi
 
 ## Set Up ##
 
-To set up Ansible on a MacOS workstation:
+To set up Ansible on a macOS workstation:
 
     make macos-controller
     cp ./ansible.cfg.example ./ansible.cfg
@@ -73,7 +73,7 @@ For convenience, the Ansible playbooks are in the root of this project.
 
 ## Passwords ##
 
-You must specify the SHA512 hashed version of a user password when you set it through Ansible. By default, MacOS does not generate the same hashes as Linux, so use this command to generate a valid hash:
+You must specify the SHA512 hashed version of a user password when you set it through Ansible. By default, macOS does not generate the same hashes as Linux, so use this command to generate a valid hash:
 
     make password
 

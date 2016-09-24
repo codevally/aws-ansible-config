@@ -3,7 +3,7 @@ default: help
 
 help:
 				@echo "make create-ec2 - create a standard Amazon EC2 server"
-				@echo "make macos-controller - install Ansible on the current MacOS system"
+				@echo "make macos-controller - install Ansible on the current macOS system"
 				@echo "make password - create a SHA512 hash from a given password"
 				@echo "make provision - set up a system as a Ruby on Rails server"
 				@echo "make repo - create the directory structure for an Ansible repository"
