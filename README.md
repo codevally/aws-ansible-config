@@ -38,21 +38,19 @@ The *ping* module checks that Ansible can connect to the remote system. The *set
 
 To run a playbook:
 
-    ansible-playbook -K my_playbook.yml
-
-The *-K* option means that Ansible will prompt you for the password of your account on the remote system in order to use *sudo*.
+    ansible-playbook my_playbook.yml
 
 Add *--syntax-check* to test the Ansible playbook without running it:
 
-    ansible-playbook --syntax-check -K my_playbook.yml
+    ansible-playbook --syntax-check my_playbook.yml
 
 Add *--check* to simulate the effect without making changes to the target systems:
 
-    ansible-playbook --check -K my_playbook.yml
+    ansible-playbook --check my_playbook.yml
 
 If the playbook requires data from a file that has been encrypted with *ansible-vault*, add  *--ask-vault-pass*:
 
-    ansible-playbook --ask-vault-pass -K my_playbook.yml
+    ansible-playbook --ask-vault-pass my_playbook.yml
 
 Enter the password for the encrypted files when prompted.
 
@@ -101,4 +99,3 @@ Regardless of how you install Python 2, you also need to add an *ansible_python_
 Email:
 
 <stuart@stuartellis.eu>
-
