@@ -22,7 +22,8 @@
         prompt: "Name of EC2 key pair"
         private: no
     tasks:
-      - local_action:
+      - name: Request EC2 instance
+        local_action:
           module: ec2
           key_name: "{{ keypair }}"
           group: "{{ security_group_name }}"
