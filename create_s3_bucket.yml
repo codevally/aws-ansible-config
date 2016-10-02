@@ -1,0 +1,21 @@
+---
+  - name: Create AWS S3 Bucket
+    hosts: localhost
+    connection: local
+    gather_facts: False
+    roles:
+      - aws_s3_bucket
+    vars:
+      - s3_bucket_name: "{{ app_name }}-{{ env_name }}-filestore-{{ aws_region }}"
+    vars_prompt:
+      - name: "app_name"
+        prompt: "Name of app, e.g. montage"
+        private: no
+      - name: "proj_name"
+        prompt: "Name of project, e.g. Montage"
+      - name: "env_name"
+        prompt: "Name of environment, e.g. staging"
+        private: no
+      - name: "aws_region"
+        prompt: "ID of AWS region, e.g. eu-west-1"
+        private: no

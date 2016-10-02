@@ -1,0 +1,25 @@
+---
+  - name: ensure S3 bucket
+    s3_bucket:
+      name: "{{ s3_bucket_name }}"
+      state: present
+      aws_region: "{{ aws_region }}"
+      tags:
+        Application: "{{ app_name }}"
+        Environment: "{{ env_name }}"
+        Project: "{{ proj_name }}"
+        Tier: "storage"
+
+  - name: ensure IAM account for access to S3 bucket
+    iam:
+      name: "{{ s3_bucket_name }}-user"
+      iam_type: user
+      state: present
+
+  - name: ensure IAM policy is attached to the user account
+    iam_policy:
+      iam_type: user
+      iam_name: "{{ s3_bucket_name }}-user"
+      policy_name: "{{ s3_bucket_name }}-policy"
+      policy_json: "{{ lookup( 'template', 's3_user_policy.json.j2') | to_json }}"
+      state: present
