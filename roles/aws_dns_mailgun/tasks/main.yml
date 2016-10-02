@@ -1,0 +1,36 @@
+---
+  - name: ensure Mailgun MX record
+    route53:
+      command: create
+      zone: "{{ domain_name }}"
+      record: "mg.{{ domain_name }}."
+      type: MX
+      ttl: 300
+      value: ["10 mxa.mailgun.org", "10 mxb.mailgun.org"]
+
+  - name: ensure Mailgun SPF record
+    route53:
+      command: create
+      zone: "{{ domain_name }}"
+      record: "mg.{{ domain_name }}."
+      type: TXT
+      ttl: 300
+      value: '"v=spf1 include:mailgun.org ~all"'
+
+  - name: ensure Mailgun DKIM record
+    route53:
+      command: create
+      zone: "{{ domain_name }}"
+      record: "pic._domainkey.mg.{{ domain_name }}."
+      type: TXT
+      ttl: 300
+      value: '"k=rsa; p=MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDVkNRntbg8s2Me2AYuX7KAO+ffcqtqSeWpYBryuDZKgMNobGR13tbcDeKNgFuOILJa+nTdMcfJjogB2/dXnR3ce5Du/vQBHH95p/lMRqgDhnVYHKFLGs+CkhIFUJQVqziVOFqa0omXoNeTzOKQrf91N/jGrAQEb+LcSPrNv5FoMQIDAQAB"'
+
+  - name: ensure Mailgun CNAME record
+    route53:
+        command: create
+        zone: "{{ domain_name }}"
+        record: "email.mg.{{ domain_name }}."
+        type: CNAME
+        ttl: 300
+        value: "mailgun.org"

@@ -1,0 +1,11 @@
+---
+  - name: Add Mailgun records to DNS Domain in AWS Route53
+    hosts: localhost
+    connection: local
+    gather_facts: False
+    roles:
+      - aws_dns_mailgun
+    vars_prompt:
+      - name: "domain_name"
+        prompt: "Domain name, e.g. stuartellis.org"
+        private: no
