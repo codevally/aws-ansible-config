@@ -1,0 +1,15 @@
+---
+  - name: Add Let's Encrypt with Lego to AWS Route53 zone
+    hosts: localhost
+    connection: local
+    gather_facts: False
+    roles:
+      - aws_dns_lego
+    vars_prompt:
+      - name: "r53_zone_id"
+        prompt: "ID for Route53 zone, e.g. Z6PCE7N3810T4P"
+        private: no
+
+      - name: "r53_zone_domain"
+        prompt: "Domain name for Route53 zone, e.g. example.com"
+        private: no
