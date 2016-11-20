@@ -4,7 +4,7 @@
     connection: local
     gather_facts: False
     roles:
-      - aws_eb_vpc
+      - aws_webapp_vpc
     vars:
       - vpc_name: "vpc-{{app_name}}-{{ env_name }}"
     vars_prompt:
