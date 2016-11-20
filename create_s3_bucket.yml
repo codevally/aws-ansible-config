@@ -5,11 +5,12 @@
     gather_facts: False
     roles:
       - aws_s3_bucket
-    vars:
-      - s3_bucket_name: "{{ app_name }}-{{ env_name }}-filestore-{{ aws_region }}"
     vars_prompt:
       - name: "app_name"
         prompt: "Name of app, e.g. montage"
+        private: no
+      - s3_bucket_name:
+        prompt: "Name of bucket, e.g. montage-staging-images-eu-west-1"
         private: no
       - name: "proj_name"
         prompt: "Name of project, e.g. Montage"
