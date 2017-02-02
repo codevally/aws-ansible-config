@@ -15,7 +15,7 @@
       publicly_accessible: yes
       subnet: "nets-{{ app_name }}-db"
       vpc_security_groups: "{{ security_group_db.group_id }}"
-      username: "dbadmin"
+      username: "{{ app_name }}dba"
       password: "{{ dba_password }}"
       tags:
         Application: "{{ app_name }}"

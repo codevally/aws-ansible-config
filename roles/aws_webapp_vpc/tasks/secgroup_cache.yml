@@ -5,6 +5,7 @@
       vpc_id: "{{ vpc.vpc_id }}"
       name: "{{ app_name }}-{{ env_name }}-elc"
       description: "Security group for {{ app_name }} Elasticache"
+      region: "{{ aws_region }}"
       rules:
         - proto: tcp
           from_port: 11211

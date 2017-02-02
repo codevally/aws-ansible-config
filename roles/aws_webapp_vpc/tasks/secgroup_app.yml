@@ -5,6 +5,7 @@
       vpc_id: "{{ vpc.vpc_id }}"
       name: "{{ app_name }}-{{ env_name }}-app"
       description: "Security group for {{ app_name }} {{ env_name }} app servers"
+      region: "{{ aws_region }}"
       rules:
         - proto: tcp
           from_port: 80
